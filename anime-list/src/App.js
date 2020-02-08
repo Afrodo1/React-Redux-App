@@ -2,24 +2,25 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import {createStore, applyMiddleware} from 'redux';
+import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
+
+import {animeReducer as reducer} from './reducers/animeReducer';
+import AnimeForm from './components/AnimeForm';
+import AnimeList from './components/AnimeList';
+
+const store = createStore(reducer, applyMiddleware(thunk));
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store = {store}>
+      <div className="App">
+        <h1>Anime List!</h1>
+        <AnimeForm/>
+        <AnimeList/>
+      </div>
+    </Provider>
   );
 }
 
