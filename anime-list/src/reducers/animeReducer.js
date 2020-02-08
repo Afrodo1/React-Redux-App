@@ -1,7 +1,8 @@
 import {GET_DATA, UPDATE_lIST} from '../actions/index';
 export const intialState = {
     animeList: [],
-    isFetchingData: true
+    isFetchingData: true,
+    
 };
 
 // export const getData = () => {

@@ -4,6 +4,8 @@ import {getData} from '../actions/index';
 
 const AnimeForm = props => {
 
+    
+
     const handleGetData = e =>{
         e.preventDefault();
         props.getData();
