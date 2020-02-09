@@ -11,7 +11,6 @@ const AnimeList = props =>{
         if(counter === props.animelist.length - 1){
             return setCounter(0);
         }
-
         else{
             return setCounter(counter + 1);
         }
@@ -35,7 +34,7 @@ const AnimeList = props =>{
         if(counter === index){
             return(
         
-        <div className = "Movie-Box">
+        <div className = "Movie-Box" key = {list.id}>
             <h1>{list.title}</h1>
             <div className="info">
                 <p>Director: {list.director}</p>

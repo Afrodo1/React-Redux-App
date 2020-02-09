@@ -16,7 +16,6 @@ function App() {
   return (
     <Provider store = {store}>
       <div className="App">
-        <h1>Anime List!</h1>
         <AnimeForm/>
         <AnimeList/>
       </div>
